@@ -1,0 +1,22 @@
+name: Output workflow
+on:
+  issues:
+    types: [opened]
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output issue title
+        run: echo "Issue title: ${{ github.event.issue.title }}"
+      - name: Output issue body
+        run: echo "Issue body: ${{ github.event.issue.body }}"
+      - name: Output issue URL
+        run: echo "Issue URL: ${{ github.event.issue.html_url }}"
+      - name: Output issue author
+        run: echo "Issue author: ${{ github.event.issue.user.login }}"
+      - name: Output issue labels
+        run: echo "Issue labels: ${{ github.event.issue.labels }}"
+      - name: Output issue state
+        run: echo "Issue state: ${{ github.event.issue.state }}"
+      - name: Output issue created at
+        run: echo "Issue created at: ${{ github.event.issue.created_at }}"
